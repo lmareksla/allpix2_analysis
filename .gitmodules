@@ -1,0 +1,3 @@
+[submodule "dpe_pypostproc"]
+	path = src/dpe_pypostproc
+	url = https://github.com/lmareksla/dpe_pypostproc.git
