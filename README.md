@@ -18,6 +18,14 @@ The current version is capable of:
 Quick Start
 -------------------------------------------------------------------------------
 
+To clone this repo use following command:
+```
+    git clone --recurse-submodules https://github.com/lmareksla/allpix2_analysis.git
+```
+On Linux operation system, the binary `clusterer` has to be in mode as runable:
+```
+chmod +x ./usr/clusterer
+```
 Comparison between measurement, full simulation and only collected charge can be run in the root directory with script
 `./usr/comparison.py`:
 ```
