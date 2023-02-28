@@ -20,7 +20,7 @@ Quick Start
 
 To clone this repo use following command:
 ```
-    git clone --recurse-submodules https://github.com/lmareksla/allpix2_analysis.git
+git clone --recurse-submodules https://github.com/lmareksla/allpix2_analysis.git
 ```
 On Linux operation system, the binary `clusterer` has to be in mode as runable:
 ```
@@ -29,12 +29,12 @@ chmod +x ./usr/clusterer
 Comparison between measurement, full simulation and only collected charge can be run in the root directory with script
 `./usr/comparison.py`:
 ```
-	python ./usr/comparison.py
+python ./usr/comparison.py
 ```
 Test data for this scirpt are stored in the directory `./test/xray_24keV/` which should do comparison for 
-In fluorescence at energy of 24.2 keV. Final results are stored in the `./use/out_coparison/`
-To generate t3pa file from ASCII sim file, use the script `convert_ascii_sim_t3pa.py` in `./src/`.
-To process t3pa to elist, use the script `run_clusterer.py` in submodule `dpe` in directory `./src/dpe_pypostproc/src/`
+In fluorescence at energy of 24.2 keV. Final results are stored in the `./use/out_coparison/`. 
+To generate t3pa file from ASCII sim file, use the script `convert_ascii_sim_t3pa.py` in `./src/`. 
+To process t3pa to elist, use the script `run_clusterer.py` in submodule `dpe` in directory `./src/dpe_pypostproc/src/`. 
 
 -------------------------------------------------------------------------------
 Directories
