@@ -14,20 +14,26 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-a = 0.09642
-b = 49.26425
-c = 575.21685
-t = -8.84622
+a = 1.932
+b = 10.729
+c = 17.937
+t = 1.912
 
 consts = [a,b,c,t]
 
-a_std_rel = 0.02
-b_std_rel = 0.02
-c_std_rel = 0.02
-t_std_rel = 0.02
+a_std_rel = 0.017
+b_std_rel = 0.176
+c_std_rel = 0.650
+t_std_rel = 0.343
+
+# a_std_rel = 0.097
+# b_std_rel = 0.176
+# c_std_rel = 0.650
+# t_std_rel = 0.343
+
 std_rels = [a_std_rel, b_std_rel, c_std_rel, t_std_rel]
 
-dir_out = "./comparison/data/cal_mat_sim/"
+dir_out = "./test/cal_mat_sim/"
 matrix_names = ["a.txt", "b.txt", "c.txt", "t.txt"]
 
 def create_const_matrix(const, matrix_width = 256, matrix_height = 256):

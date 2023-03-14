@@ -25,7 +25,6 @@ def recognize_ascii_file(file_path_name):
 				if "PixelHit" in line:
 					print(line)
 					do_ascii_pxhit = True
-					break
 
 				if "Charge" in line:
 					print(line)
@@ -94,6 +93,17 @@ def write_px_t3pa(px, file_out):
 	        px[4] 	# fToA
 	        ))
 
+
+def convert_charge_tot_thl(charge, a = 1.932, b = 10.729, c = 17.937, t = 1.912, thl = 3, e_eh = 0.00364 ):
+	E = charge*e_eh
+
+	if E < thl:
+		return 0
+	if (E - t) == 0:
+		return 0 
+
+	return int(a*E + b - (c/(E-t)))
+
 def convert_ascii_pxcharge_t3pa(file_in_name_path, file_out_name_path):
 	rc = 0
 
@@ -121,8 +131,10 @@ def convert_ascii_pxcharge_t3pa(file_in_name_path, file_out_name_path):
 
 				if "Charge:" in line:
 					px[3] = int(re.findall(r'\d+', line[7:])[0])
+					px[3] = convert_charge_tot_thl(px[3])
 					px[0] += 1
-					write_px_t3pa(px, file_out)
+					if px[3] != 0:
+						write_px_t3pa(px, file_out)
 
 			# Write last px
 			if len(px) != 0:
